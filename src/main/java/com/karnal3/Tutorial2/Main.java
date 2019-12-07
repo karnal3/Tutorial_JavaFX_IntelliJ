@@ -1,12 +1,14 @@
-package com.karnal3.Tutorial1;
+package com.karnal3.Tutorial2;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Main extends Application implements EventHandler<ActionEvent> {
 
     Button button;
 
@@ -15,10 +17,12 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage)  {
         stage.setTitle("Title of the window");
         button = new Button();
         button.setText("Click me!");
+
+        button.setOnAction(this);
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
@@ -27,5 +31,12 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        if(actionEvent.getSource()==button){
+            System.out.println("Write to console when button clicked");
+        }
     }
 }
