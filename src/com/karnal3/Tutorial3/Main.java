@@ -1,14 +1,12 @@
 package com.karnal3.Tutorial3;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main extends Application implements EventHandler<ActionEvent> {
+public class Main extends Application {
 
     Button button;
 
@@ -19,12 +17,28 @@ public class Main extends Application implements EventHandler<ActionEvent> {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Title of the window");
+        StackPane layout = new StackPane();
         button = new Button();
         button.setText("Click me!");
 
-        button.setOnAction(this);
+        button.setOnAction(actionEvent -> {
+            System.out.println("LOOOOOL");
+            System.out.println("LOOOOOL");
+            System.out.println("LOOOOOL");
+            System.out.println("LOOOOOL");
+        });
+        layout.getChildren().add(button);
 
-        StackPane layout = new StackPane();
+        button = new Button();
+        button.setText("Click me2!");
+        button.setRotate(90);
+
+        button.setOnAction(actionEvent -> {
+            System.out.println("LOOOsdfsdffgsdfsdfsdOOL");
+            System.out.println("asdasfdasasd");
+        });
+
+
         layout.getChildren().add(button);
 
         Scene scene = new Scene(layout, 300, 250);
@@ -33,10 +47,5 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        if(actionEvent.getSource()==button){
-            System.out.println("Write to console when button clicked");
-        }
-    }
+
 }
