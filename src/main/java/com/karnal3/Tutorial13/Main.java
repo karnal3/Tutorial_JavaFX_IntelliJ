@@ -31,7 +31,8 @@ public class Main extends Application {
         choisceBox.getItems().addAll("Graple","Ham","Meatballs");
         choisceBox.setValue("Apples");
 
-        button.setOnAction(e -> getChoisce(choisceBox));
+        //Listen for selection
+        choisceBox.getSelectionModel().selectedItemProperty().addListener((v,oldValue,newValue) -> System.out.println(newValue));
 
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
@@ -44,10 +45,6 @@ public class Main extends Application {
     }
 
 
-    private void getChoisce(ChoiceBox<String> choiceBox){
-        String food = choiceBox.getValue();
-        System.out.println(food);
-    }
 
     public static void main(String[] args) {
         launch(args);
