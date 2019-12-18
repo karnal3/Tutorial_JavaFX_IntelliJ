@@ -17,7 +17,7 @@ public class Main extends Application {
     Button button;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage)  {
 
         window=primaryStage;
         window.setTitle("Checkbox example");
@@ -36,6 +36,7 @@ public class Main extends Application {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.getChildren().addAll(button,choisceBox);
+
 
         scene = new Scene(layout,300,250);
         window.setScene(scene);

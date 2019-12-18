@@ -17,7 +17,7 @@ public class Main extends Application {
     Button button;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage)  {
 
         window=primaryStage;
         window.setTitle("Checkbox example");
